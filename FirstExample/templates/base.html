@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>HelloWorld</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">	
+	<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+	<link rel="stylesheet" href="{% static 'css/myStyle2.css' %}">    
+</head>
+    <body>
+     <div class="page-header">
+        <h1><a href="/">django 블로그 만들기</a></h1>
+     </div>       
+    <div class="content" class = "row" >
+      <div id = "menu" class = "col-md-4" >
+	   <p>Home</p>
+	   <p>About</p>
+	   <p>Blog</p>
+	   <p><a Class="btn btn-login" href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"></span></a>
+           {% if user.is_authenticated %}
+    	   <a></a><a></a><a href="url 'post_new' %}"><span class="glyhicon glyphicon-plus"></span></a>
+     	   {% endif %}
+	   </p>
+	</div>
+   <div class="row" id = "contents">
+      	<div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </div>
+   </div>
+  </body>
+</html>
